@@ -40,6 +40,6 @@ jobs:
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
       - name: Build and analyze
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"SergioAVega_sonarQubeDotNet_AYuRTcoeMv0giqkxllET" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"SergioAVega_sonarQubeDotNet_AYuRTcoeMv0giqkxllET" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}api/server/version"
           dotnet build
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
