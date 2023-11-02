@@ -18,13 +18,11 @@ jobs:
       #  with:
       #    dotnet-version: 6.x  # Change to the version you need
 
-      #- name: Restore dependencies
-      - name: Restore
+      - name: Restore dependencies
         shell: pwsh
         run: dotnet restore
           
-      #- name: Build the project
-      - name: Build
+      - name: Build the project
         shell: pwsh
         run: dotnet build
 
