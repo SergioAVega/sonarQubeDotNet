@@ -18,11 +18,11 @@ jobs:
       #  with:
       #    dotnet-version: 5.x  # Change to the version you need
 
-      #- name: Restore dependencies
-      #  run: dotnet restore
+      - name: Restore dependencies
+        run: dotnet restore
 
-      #- name: Build the project
-      # run: dotnet build
+      - name: Build the project
+        run: dotnet build
 
       - name: Run SonarQube Analysis
         run: dotnet sonarscanner begin /k:"techDebtLTIM_sonarQubeDotNet_AYuQorpj8CjBj4y8qPBq" /d:sonar.host.url="http://localhost:9000" /d:sonar.login=$SONARQUBE_TOKEN
