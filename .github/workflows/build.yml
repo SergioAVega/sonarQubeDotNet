@@ -7,7 +7,7 @@ on:
 
 jobs:
   sonarqube:
-    runs-on: ubuntu-latest  # You can choose an appropriate runner
+    runs-on: self-hosted  # You can choose an appropriate runner
 
     steps:
       - name: Checkout code
