@@ -7,19 +7,19 @@ on:
 
 jobs:
   sonarqube:
-    runs-on: self-hosted  # You can choose an appropriate runner
+    runs-on: ubuntu-latest  # You can choose an appropriate runner
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      #- name: Set up .NET Core
-      #  uses: actions/setup-dotnet@v1
-      #  with:
-      #    dotnet-version: 5.x  # Change to the version you need
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.x  # Change to the version you need
 
-      #- name: Restore dependencies
-      #  run: dotnet restore
+      - name: Restore dependencies
+        run: dotnet restore
 
       - name: Build the project
         run: dotnet run
