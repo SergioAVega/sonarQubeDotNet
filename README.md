@@ -1,29 +1,15 @@
-# SonarQube-Scanner MSBuild CSharp Project
+# C# Console Application Sample
 
-This example demonstrates how to analyze a .NET Solution with the SonarScanner for MSBuild. Please review [cateogrization of product projects versus test projects](https://github.com/SonarSource/sonar-scanner-msbuild/wiki/Analysis-of-product-projects-vs.-test-projects) to ensure your CSharp project is scanned correctly.
+This sample is created during the [Console Application Tutorial](https://docs.microsoft.com/dotnet/csharp/tutorials/console-teleprompter)
+for learning C# features. Please see that topic for detailed steps on the code
+for this sample.
 
-## Prerequisites
+## Key Features
 
-* [SonarQube](http://www.sonarqube.org/downloads/) 8.9 LTS or Latest
-* [SonarScanner for .NET](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-msbuild/) 5.8.0+
-* [Compatible .NET Build Environment](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-msbuild/)
+This sample demonstrates File I/O, async features, and terminal input and output.
 
-## Usage
+## Build and Run
 
-* Run SonarScanner for MSBuild begin phase:
+To build and run the sample, type the following command:
 
-```powershell
-        SonarScanner.MSBuild.exe begin /k:"org.sonarqube:sonarqube-scanner-msbuild" /n:"Example of SonarScanner for MSBuild Usage" /v:"1.0"
-```
-
-* Build the project with MSBuild:
-
-```powershell
-        MSBuild.exe /t:Rebuild
-```
-
-* Run SonarScanner for MSBuild end phase:
-
-```powershell
-        SonarScanner.MSBuild.exe end
-```
+`dotnet run`
