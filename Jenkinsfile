@@ -1,6 +1,5 @@
 pipeline {
     agent any // Use any available agent (no need to specify a label)
-    }
 
     stages {
         stage('SCM') {
@@ -35,3 +34,4 @@ pipeline {
             // Define post-failure actions if needed
         }
     }
+}
