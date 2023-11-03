@@ -17,7 +17,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 script {
-                    def scannerHome = tool 'New Scanner' // Assuming SonarScannerDemo_BM tool is correctly configured
+                    def scannerHome = tool 'NewScanner' // Assuming SonarScannerDemo_BM tool is correctly configured
 
                     withSonarQubeEnv() {
                         bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.exe begin /k:\"SergioAVega_sonarQubeDotNet_AYuRTcoeMv0giqkxllET\""
