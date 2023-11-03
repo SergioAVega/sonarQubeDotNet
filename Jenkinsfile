@@ -2,11 +2,6 @@ node {
   stage('SCM') {
     checkout scm
   }
-  environment {
-
-    PATH = "C:\\WINDOWS\\SYSTEM32"
-
-}
   stage('SonarQube Analysis') {
     def scannerHome = tool 'SonarScannerDemo_BM'
     withSonarQubeEnv() {
