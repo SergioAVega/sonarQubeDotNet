@@ -3,7 +3,8 @@ name: SonarQube Scan
 on:
   push:
     branches:
-      - master  # Customize the branch as needed
+      - master
+    # Customize the branch as needed
 
 jobs:
   sonarqube:
