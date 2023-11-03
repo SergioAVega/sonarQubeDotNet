@@ -20,11 +20,11 @@ jobs:
       #    dotnet-version: 6.x  # Change to the version you need
 
       - name: Restore dependencies
-        #shell: pwsh
+        shell: pwsh
         run: dotnet restore
           
       - name: Build the project
-        #shell: pwsh
+        shell: pwsh
         run: dotnet build
 
       - name: Run SonarQube Analysis
