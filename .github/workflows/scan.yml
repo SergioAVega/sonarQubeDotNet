@@ -1,0 +1,39 @@
+name: SonarQube Scan
+
+on:
+  push:
+    branches:
+      - master  # Customize the branch as needed
+
+jobs:
+  sonarqube:
+    runs-on: self-hosted  # You can choose an appropriate runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      #- name: Set up .NET Core
+      #  uses: actions/setup-dotnet@v1
+      #  with:
+      #    dotnet-version: 6.x  # Change to the version you need
+
+      - name: Restore dependencies
+        #shell: pwsh
+        run: dotnet restore
+          
+      - name: Build the project
+        #shell: pwsh
+        run: dotnet build
+
+      - name: Run SonarQube Analysis
+        run: dotnet sonarscanner begin /k:"techDebtLTIM_sonarQubeDotNet_AYuQorpj8CjBj4y8qPBq" /d:sonar.host.url="http://localhost:9000" /d:sonar.login=$SONARQUBE_TOKEN
+        env:
+          SONARQUBE_TOKEN: 'techDebtLTIM_sonarQubeDotNet_AYuQorpj8CjBj4y8qPBq'
+
+      - name: Build and analyze
+        run: dotnet build /t:Rebuild
+        continue-on-error: true
+
+      - name: End SonarQube Analysis
+        run: dotnet sonarscanner end /d:sonar.login=$SONARQUBE_TOKEN
