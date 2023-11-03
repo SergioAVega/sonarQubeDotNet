@@ -20,9 +20,9 @@ pipeline {
                     def scannerHome = tool 'SonarScannerDemo_BM' // Assuming SonarScannerDemo_BM tool is correctly configured
 
                     withSonarQubeEnv() {
-                        bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll begin /k:\"SergioAVega_sonarQubeDotNet_AYuRTcoeMv0giqkxllET\""
+                        bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.exe begin /k:\"SergioAVega_sonarQubeDotNet_AYuRTcoeMv0giqkxllET\""
                         bat "dotnet build"
-                        bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll end"
+                        bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.exe end"
                     }
                 }
             }
