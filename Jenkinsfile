@@ -28,10 +28,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        failure {
-            // Define post-failure actions if needed
-        }
-    }
 }
