@@ -1,4 +1,4 @@
-name: Build
+name: Main Build
 
 on:
   push:
@@ -13,7 +13,10 @@ jobs:
     #permissions: read-all
     steps:
       -  name: Configure Git safe directory        
-         run: git config --global --add safe.directory C:/action-runner/_work/sonarQubeDotNet/sonarQubeDotNet
+         run: |
+          if ($env:GITHUB_ACTIONS -eq "true") {
+           git config --global --add safe.directory C:/action-runner/_work/sonarQubeDotNet/sonarQubeDotNet
+           }      
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
