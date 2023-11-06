@@ -1,0 +1,15 @@
+name: Check SonarQube Server Accessibility
+
+on:
+  workflow_run:
+    workflows: ["YourWorkflowName"]
+    types:
+      - pull_request
+
+jobs:
+  wget_check:
+    runs-on: self-hosted
+    steps:
+      - name: Check SonarQube server with wget
+        run: |
+          wget --spider http://localhost:9000
