@@ -1,11 +1,9 @@
 name: Check SonarQube Server Accessibility
 
 on:
-  workflow_run:
-    workflows: ["YourWorkflowName"]
-    types:
-      - pull_request
-
+  push:
+    branches:
+      - main
 jobs:
   wget_check:
     runs-on: self-hosted
