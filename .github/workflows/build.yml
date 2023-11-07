@@ -43,6 +43,7 @@ jobs:
 
       - name: Build and analyze
         run: |
+          cd C:\actions-runner\_work\sonarQubeDotNet\sonarQubeDotNet
           .sonar\scanner\dotnet-sonarscanner begin /k:"SergioAVega_sonarQubeDotNet_AYuRTcoeMv0giqkxllET" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
-          dotnet build
+          dotnet build eShopOnWeb.sln
           .sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
