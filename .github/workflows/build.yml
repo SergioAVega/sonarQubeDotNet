@@ -48,4 +48,4 @@ jobs:
           dotnet build eShopOnWeb.sln
           .sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
       - name: JSON Report
-        run: sonar-runner -Dsonar.analysis.mode=preview -Dsonar.issuesReport.html.enable=true -Dsonar.report.export.path=report.json -Dsonar.host.url=http://localhost:9000 
+        run: curl -u your-sonar-token:"${{ secrets.SONAR_TOKEN }}"  GET "http://localhost:9000/api/issues/search?componentKeys=SergioAVega_sonarQubeDotNet_AYuRTcoeMv0giqkxllET" -o sonarqube_report.json
