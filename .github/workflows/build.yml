@@ -47,3 +47,5 @@ jobs:
           .sonar\scanner\dotnet-sonarscanner begin /k:"SergioAVega_sonarQubeDotNet_AYuRTcoeMv0giqkxllET" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
           dotnet build eShopOnWeb.sln
           .sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+      - name: JSON Report
+        run: sonar-runner -Dsonar.analysis.mode=preview -Dsonar.issuesReport.html.enable=true -Dsonar.report.export.path=report.json -Dsonar.host.url=http://localhost:9000 
